@@ -117,7 +117,7 @@ class PageTemplater {
                         
                 } 
 
-                $file = WP_PLUGIN_DIR.'/'.plugin_dir_path('msd-custom-pages/msd-custom-pages.php'). '/lib/template/'. get_post_meta( 
+                $file = WP_PLUGIN_DIR.'/'.plugin_dir_path('msd-specialty-pages/msd-specialty-pages.php'). 'lib/template/'. get_post_meta( 
                     $post->ID, '_wp_page_template', true 
                 );
                 
@@ -125,7 +125,7 @@ class PageTemplater {
                 if( file_exists( $file ) ) {
                         return $file;
                 } 
-                else { echo $file; }
+                else { echo 'path no good:'.$file; }
 
                 return $template;
 

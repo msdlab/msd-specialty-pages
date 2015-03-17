@@ -45,7 +45,7 @@ if (is_admin()){
                     $thumb_array = wp_get_attachment_image_src( get_attachment_id_from_src($mb->get_the_value()), 'thumbnail' );
                     $thumb = $thumb_array[0];
                 } else {
-                    $thumb = WP_PLUGIN_URL.'/msd-custom-pages/lib/img/spacer.gif';
+                    $thumb = WP_PLUGIN_URL.'/msd-specialty-pages/lib/img/spacer.gif';
                 } ?>
                 <img class="background-preview-img" src="<?php print $thumb; ?>">
                 <?php $group_name = 'background-img-'. $mb->get_the_index(); ?>
@@ -111,7 +111,7 @@ if (is_admin()){
                     $thumb_array = wp_get_attachment_image_src( get_attachment_id_from_src($mb->get_the_value()), 'thumbnail' );
                     $thumb = $thumb_array[0];
                 } else {
-                    $thumb = WP_PLUGIN_URL.'/msd-custom-pages/lib/img/spacer.gif';
+                    $thumb = WP_PLUGIN_URL.'/msd-specialty-pages/lib/img/spacer.gif';
                 } ?>
                 <img class="content-area-preview-img" src="<?php print $thumb; ?>">
                 <?php $group_name = 'content-area-feature-img-'. $mb->get_the_index(); ?>

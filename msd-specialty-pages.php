@@ -12,7 +12,7 @@ if(!class_exists('GitHubPluginUpdater')){
 }
 
 if ( is_admin() ) {
-    new GitHubPluginUpdater( __FILE__, 'msdlab', "msd_site_settings" );
+    new GitHubPluginUpdater( __FILE__, 'msdlab', "msd-specialty-pages" );
 }
 
 if(!class_exists('WPAlchemy_MetaBox')){
@@ -92,10 +92,6 @@ if (!class_exists('MSDCustomPages')) {
          */
         var $options = array();
         //Methods
-        /**
-        * PHP 4 Compatible Constructor
-        */
-        function MSDCustomPages(){$this->__construct();}
         
         /**
         * PHP 5 Constructor
@@ -113,6 +109,11 @@ if (!class_exists('MSDCustomPages')) {
             //here are some examples to get started with
             if(class_exists('PageTemplater')){
                 add_action( 'plugins_loaded', array( 'PageTemplater', 'get_instance' ) );
+            }
+            if(class_exists('MSDSimpleSectionedPage')){
+                add_action('admin_print_footer_scripts',array('MSDSimpleSectionedPage','info_footer_hook') ,100);     
+                add_action('admin_enqueue_scripts',array('MSDSimpleSectionedPage','enqueue_admin')); 
+                add_action( 'init', array( 'MSDSimpleSectionedPage', 'add_metaboxes' ) );
             }
             if(class_exists('MSDSectionedPage')){
                 add_action('admin_print_footer_scripts',array('MSDSectionedPage','info_footer_hook') ,100);     
