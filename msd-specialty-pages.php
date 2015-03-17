@@ -1,11 +1,19 @@
 <?php
 /*
-Plugin Name: MSD Custom Pages
-Description: Custom plugin for MSDLAB. Framework to create custom templated pages with custom backends
+Plugin Name: MSD Specialty Pages
+Description: Framework to create specialty templated pages with custom backends. Currently supports two types of LayerCake design structures.
 Author: Catherine Sandrick
-Version: 0.0.4
+Version: 0.0.5
 Author URI: http://msdlab.com
 */
+
+if(!class_exists('GitHubPluginUpdater')){
+    require_once (plugin_dir_path(__FILE__).'/lib/resource/GitHubPluginUpdater.php');
+}
+
+if ( is_admin() ) {
+    new GitHubPluginUpdater( __FILE__, 'msdlab', "msd_site_settings" );
+}
 
 if(!class_exists('WPAlchemy_MetaBox')){
     if(!include_once (WP_CONTENT_DIR.'/wpalchemy/MetaBox.php'))

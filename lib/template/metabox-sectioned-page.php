@@ -63,6 +63,13 @@ if (is_admin()){
                 <?php $mb->the_field('background-color'); ?>
                 <input class="colorpicker" type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/>
             </div>
+        </div>       
+        <div class="cell">
+            <?php $mb->the_field('css-classes'); ?>
+            <label>CSS Classes</label>            
+            <div class="input_container">
+                <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/><br />
+            </div>
         </div>
         <div class="content-area box">
             <div class="cell">

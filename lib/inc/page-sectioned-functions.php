@@ -71,12 +71,21 @@ class MSDSectionedPage{
         $content = apply_filters('the_content',$section['content-area-content']);
         $float = $section['feature-image-float']!='none'?' style="float:'.$section['feature-image-float'].'";':'';
         $featured_image = $section['content-area-image'] !=''?'<img src="'.$section['content-area-image'].'"'.$float.' />':'';
+        $classes = array(
+            'section',
+            'section-'.$slug,
+            $section['css-classes'],
+            'section-'.$eo,
+            'clearfix',
+        );
+        //think about filtering the classes here
         $ret = '
-        <div id="'.$slug.'" class="section section-'.$eo.' section-'.$slug.' clearfix"'.$background.'>
+        <div id="'.$slug.'" class="'.implode(' ', $classes).'"'.$background.'>
+        
+                '.$wrapped_title.'
             <div class="section-body">
                 <div class="wrap">
                     '.$featured_image.'
-                '.$wrapped_title.'
                     '.$subtitle.'
                     '.$content.'
                 </div>
