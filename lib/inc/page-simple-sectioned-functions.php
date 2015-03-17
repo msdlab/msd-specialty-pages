@@ -25,22 +25,6 @@ class MSDSimpleSectionedPage{
         private function __construct() {
             add_action('admin_footer',array(&$this,'info_footer_hook') );            
         }
-        
-    function add_metaboxes(){
-        global $post,$sectioned_page_metabox,$wpalchemy_media_access;
-        $sectioned_page_metabox = new WPAlchemy_MetaBox(array
-        (
-            'id' => '_simple_sectioned_page',
-            'title' => 'Page Sections',
-            'types' => array('page'),
-            'context' => 'normal', // same as above, defaults to "normal"
-            'priority' => 'high', // same as above, defaults to "high"
-            'template' => WP_PLUGIN_DIR.'/'.plugin_dir_path('msd-specialty-pages/msd-specialty-pages.php'). '/lib/template/metabox-sectioned-page.php',
-            'autosave' => TRUE,
-            'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
-            'prefix' => '_msdlab_', // defaults to NULL
-        ));
-    }
     
     function sectioned_page_output(){
         wp_enqueue_script('sticky',WP_PLUGIN_URL.'/'.plugin_dir_path('msd-specialty-pages/msd-specialty-pages.php'). '/lib/js/jquery.sticky.js',array('jquery'),FALSE,TRUE);

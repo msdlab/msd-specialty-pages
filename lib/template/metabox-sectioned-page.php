@@ -6,7 +6,7 @@ $postid = is_admin()?$_GET['post']:$post->ID;
 $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
   // check for a template type
 if (is_admin()){
-    if($template_file == 'page-sectioned.php') { ?>
+    if($template_file == 'page-sectioned.php' || $template_file == 'page-simple-sectioned.php') { ?>
 <div class="msdlab_meta_control">
     <p id="warning" style="display: none;background:lightYellow;border:1px solid #E6DB55;padding:5px;">Order has changed. Please click Save or Update to preserve order.</p>
     <div class="table">
@@ -197,6 +197,6 @@ if (is_admin()){
     <p style="margin-bottom:15px; padding-top:5px;"><a href="#" class="docopy-sections button">Add Section</a>
 </div>
 <?php } else {
-    print "Select \"Sectioned Page\" template and save to activate.";
+    print "Select \"Sectioned Page\" or \"Simple Sectioned Page\" template and save to activate.";
 }
 } ?>
