@@ -4,3 +4,6 @@
 0.0.4: Move Simple sections back into plugin as an option.
 0.0.5: Change plugin name to allow for exclusion in sitewide .gitignore. Add updater classes and move to MSDLAB github account
 0.0.6: Bug fix to repair bad paths created by name change
+0.0.7: Just issues with updates
+0.0.8: Just issues with updates
+0.0.9: Allow for overrides of templates in themes

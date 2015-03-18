@@ -106,7 +106,6 @@ class PageTemplater {
          * Checks if the template is assigned to the page
          */
         public function view_project_template( $template ) {
-
                 global $post;
 
                 if (!isset($this->templates[get_post_meta( 
@@ -117,6 +116,15 @@ class PageTemplater {
                         
                 } 
 
+                $file = get_stylesheet_directory() . '/' . get_post_meta( 
+                    $post->ID, '_wp_page_template', true 
+                );
+                                
+                // Just to be safe, we check if the file exist first
+                if( file_exists( $file ) ) {
+                        return $file;
+                } 
+                
                 $file = WP_PLUGIN_DIR.'/'.plugin_dir_path('msd-specialty-pages/msd-specialty-pages.php'). 'lib/template/'. get_post_meta( 
                     $post->ID, '_wp_page_template', true 
                 );
