@@ -82,11 +82,13 @@ class MSDSimpleSectionedPage{
     }
         function info_footer_hook()
         {
-            global $current_screen;
-            if($current_screen->post_type == $this->cpt){
+            $postid = is_admin()?$_GET['post']:$post->ID;
+            $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
+            if($template_file == 'page-simple-sectioned.php'){
                 ?><script type="text/javascript">
                         jQuery('#postdivrich').after(jQuery('#_sectioned_page_metabox'));
                     </script><?php
             }
         }
+    function enqueue_admin(){}
 }

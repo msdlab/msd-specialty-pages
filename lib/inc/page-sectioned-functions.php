@@ -147,7 +147,9 @@ class MSDSectionedPage{
     }
         function info_footer_hook()
         {
-            global $current_screen;
+            $postid = is_admin()?$_GET['post']:$post->ID;
+            $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
+            if($template_file == 'page-sectioned.php'){
             ?><script type="text/javascript">
                 jQuery(function($){
                     $("#wpa_loop-sections").sortable({
@@ -164,7 +166,7 @@ class MSDSectionedPage{
                     });
                 });
                 </script><?php
-            
+            }
         }
         
         function enqueue_admin(){
