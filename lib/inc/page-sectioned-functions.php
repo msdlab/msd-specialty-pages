@@ -69,7 +69,7 @@ class MSDSectionedPage{
         </div>':'';
         $subtitle = $section['content-area-subtitle'] !=''?'<h4 class="section-subtitle">'.$section['content-area-subtitle'].'</h4>':'';
         $content = apply_filters('the_content',$section['content-area-content']);
-        $float = $section['feature-image-float']!='none'?' class="align'.$section['feature-image-float'].';"':'';
+        $float = $section['feature-image-float']!='none'?' class="align'.$section['feature-image-float'].'"':'';
         $featured_image = $section['content-area-image'] !=''?'<img src="'.$section['content-area-image'].'"'.$float.' />':'';
         $classes = array(
             'section',
