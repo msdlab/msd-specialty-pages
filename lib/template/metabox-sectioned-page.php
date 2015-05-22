@@ -31,9 +31,11 @@ if (is_admin()){
             <?php $mb->the_field('layout'); ?>
             <label>Section <?php print $i ?> Layout</label>            
             <div class="input_container">
-                <select name="<?php $mb->the_name(); ?>" disabled>
+                <select name="<?php $mb->the_name(); ?>" class="layout">
                     <option value=""<?php $mb->the_select_state('default'); ?>>Default</option>
-                    <option value="three-boxes"<?php $mb->the_select_state('three-boxes'); ?>>Three Boxes</option>
+                    <option value="two-col"<?php $mb->the_select_state('two-col'); ?>>Two Columns</option>
+                    <option value="three-col"<?php $mb->the_select_state('three-col'); ?>>Three Columns</option>
+                    <option value="four-col"<?php $mb->the_select_state('four-col'); ?>>Four Columns</option>
                 </select>
             </div>
         </div>
@@ -92,10 +94,98 @@ if (is_admin()){
                 </div>
             </div>
             <div class="cell">
-                <label>Content</label>
+                <label>Section Header Content</label>
+                <div class="input_container">
+                    <?php 
+                    $mb->the_field('header-area-content');
+                    $mb_content = html_entity_decode($mb->get_the_value(), ENT_QUOTES, 'UTF-8');
+                    $mb_editor_id = sanitize_key($mb->get_the_name());
+                    $mb_settings = array('textarea_name'=>$mb->get_the_name(),'textarea_rows' => '5',);
+                    wp_editor( $mb_content, $mb_editor_id, $mb_settings );
+                    ?>
+               </div>
+            </div>
+            <div class="cell column-1">
+                <label class="cols-2 cols-3 cols-4">Column 1 Width</label>
+                <div class="input_container cols-2 cols-3 cols-4">
+                    <?php 
+                    $mb->the_field('content-area-width');
+                    ?>
+                    <input class="input-range" type="range" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" min="1" max="12"><span class="range-value"></span>
+                </div>
+                <label><span class="cols-2 cols-3 cols-4">Column 1 </span>Content</label>
                 <div class="input_container">
                     <?php 
                     $mb->the_field('content-area-content');
+                    $mb_content = html_entity_decode($mb->get_the_value(), ENT_QUOTES, 'UTF-8');
+                    $mb_editor_id = sanitize_key($mb->get_the_name());
+                    $mb_settings = array('textarea_name'=>$mb->get_the_name(),'textarea_rows' => '5',);
+                    wp_editor( $mb_content, $mb_editor_id, $mb_settings );
+                    ?>
+               </div>
+            </div>
+            <div class="cell column-2 cols-2 cols-3 cols-4">
+                <label>Column 2 Width</label>
+                <div class="input_container">
+                    <?php 
+                    $mb->the_field('column-2-area-width');
+                    ?>
+                    <input class="input-range" type="range" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" min="1" max="12"><span class="range-value"></span>
+                </div>
+                <label>Column 2 Content</label>
+                <div class="input_container">
+                    <?php 
+                    $mb->the_field('column-2-area-content');
+                    $mb_content = html_entity_decode($mb->get_the_value(), ENT_QUOTES, 'UTF-8');
+                    $mb_editor_id = sanitize_key($mb->get_the_name());
+                    $mb_settings = array('textarea_name'=>$mb->get_the_name(),'textarea_rows' => '5',);
+                    wp_editor( $mb_content, $mb_editor_id, $mb_settings );
+                    ?>
+               </div>
+            </div>
+            <div class="cell column-3 cols-3 cols-4">
+                <label>Column 3 Width</label>
+                <div class="input_container">
+                    <?php 
+                    $mb->the_field('column-3-area-width');
+                    ?>
+                    <input class="input-range" type="range" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" min="1" max="12"><span class="range-value"></span>
+                </div>
+                <label>Column 3 Content</label>
+                <div class="input_container">
+                    <?php 
+                    $mb->the_field('column-3-area-content');
+                    $mb_content = html_entity_decode($mb->get_the_value(), ENT_QUOTES, 'UTF-8');
+                    $mb_editor_id = sanitize_key($mb->get_the_name());
+                    $mb_settings = array('textarea_name'=>$mb->get_the_name(),'textarea_rows' => '5',);
+                    wp_editor( $mb_content, $mb_editor_id, $mb_settings );
+                    ?>
+               </div>
+            </div>
+            <div class="cell column-4 cols-4">
+                <label>Column 4 Width</label>
+                <div class="input_container">
+                    <?php 
+                    $mb->the_field('column-4-area-width');
+                    ?>
+                    <input class="input-range" type="range" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" min="1" max="12"><span class="range-value"></span>
+                </div>
+                <label>Column 4 Content</label>
+                <div class="input_container">
+                    <?php 
+                    $mb->the_field('column-4-area-content');
+                    $mb_content = html_entity_decode($mb->get_the_value(), ENT_QUOTES, 'UTF-8');
+                    $mb_editor_id = sanitize_key($mb->get_the_name());
+                    $mb_settings = array('textarea_name'=>$mb->get_the_name(),'textarea_rows' => '5',);
+                    wp_editor( $mb_content, $mb_editor_id, $mb_settings );
+                    ?>
+               </div>
+            </div>
+            <div class="cell">
+                <label>Section Footer Content</label>
+                <div class="input_container">
+                    <?php 
+                    $mb->the_field('footer-area-content');
                     $mb_content = html_entity_decode($mb->get_the_value(), ENT_QUOTES, 'UTF-8');
                     $mb_editor_id = sanitize_key($mb->get_the_name());
                     $mb_settings = array('textarea_name'=>$mb->get_the_name(),'textarea_rows' => '5',);

@@ -66,3 +66,8 @@
 .msdlab_meta_control .odd {
   background: #fff;
 }
+.msdlab_meta_control .cols-2,
+.msdlab_meta_control .cols-3,
+.msdlab_meta_control .cols-4 {
+  display: none;
+}
