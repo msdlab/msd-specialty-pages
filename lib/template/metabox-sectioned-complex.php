@@ -102,7 +102,7 @@
                     <?php 
                     $mb->the_field('content-area-width');
                     ?>
-                    <input class="input-range" type="range" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" min="1" max="12"><span class="range-value"></span>
+                    <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" /> How many columns out of 12?
                 </div>
                 <label><span class="cols-2 cols-3 cols-4">Column 1 </span>Content</label>
                 <div class="input_container">
@@ -122,7 +122,7 @@
                     <?php 
                     $mb->the_field('column-'.$i.'-area-width');
                     ?>
-                    <input class="input-range" type="range" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" min="1" max="12"><span class="range-value"></span>
+                    <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" />
                 </div>
                 <label>Column <?php print $i; ?> Content</label>
                 <div class="input_container">
