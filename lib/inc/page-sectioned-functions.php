@@ -42,7 +42,7 @@ class MSDSectionedPage{
         ));
     }
     
-    static function default_output($section,$i){
+    function default_output($section,$i){
         //ts_data($section);
         global $parallax_ids;
         $eo = ($i+1)%2==0?'even':'odd';
@@ -100,7 +100,7 @@ class MSDSectionedPage{
     }
 
 
-    static function column_output($section,$i){
+    function column_output($section,$i){
         //ts_data($section);
         global $parallax_ids;
         $eo = ($i+1)%2==0?'even':'odd';
