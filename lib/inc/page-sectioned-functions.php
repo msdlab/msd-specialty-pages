@@ -42,7 +42,7 @@ class MSDSectionedPage{
         ));
     }
     
-    function default_output($section,$i){
+    static function default_output($section,$i){
         //ts_data($section);
         global $parallax_ids;
         $eo = ($i+1)%2==0?'even':'odd';
@@ -100,7 +100,7 @@ class MSDSectionedPage{
     }
 
 
-    function column_output($section,$i){
+    static function column_output($section,$i){
         //ts_data($section);
         global $parallax_ids;
         $eo = ($i+1)%2==0?'even':'odd';
@@ -215,6 +215,7 @@ class MSDSectionedPage{
         // build scenes
         <?php
             $i = 0;
+            if($parallax_ids):
             foreach($parallax_ids AS $p_id):
         ?>
         new ScrollScene({options:{triggerElement:"#<?php print $p_id; ?>"}})
@@ -223,6 +224,7 @@ class MSDSectionedPage{
         <?php 
             $i++;
             endforeach;
+            endif;
         ?>
             $("#floating_nav").sticky({ topSpacing: 0 });
         });
