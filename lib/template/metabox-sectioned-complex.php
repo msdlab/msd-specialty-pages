@@ -133,27 +133,6 @@
                     ?>
                </div>
             </div>
-            <?php for($i=2;$i<=4;$i++){ ?>
-            <div class="cell column-<?php print $i; ?> <?php print get_hidden($i) ?>">
-                <label>Column <?php print $i; ?> Width</label>
-                <div class="input_container">
-                    <?php 
-                    $mb->the_field('column-'.$i.'-area-width');
-                    ?>
-                    <input type="text" class="small" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" /> How many columns out of 12?
-                </div>
-                <label>Column <?php print $i; ?> Content</label>
-                <div class="input_container">
-                    <?php 
-                    $mb->the_field('column-'.$i.'-area-content');
-                    $mb_content = html_entity_decode($mb->get_the_value(), ENT_QUOTES, 'UTF-8');
-                    $mb_editor_id = sanitize_key($mb->get_the_name());
-                    $mb_settings = array('textarea_name'=>$mb->get_the_name(),'textarea_rows' => '5',);
-                    wp_editor( $mb_content, $mb_editor_id, $mb_settings );
-                    ?>
-               </div>
-            </div>
-            <?php } ?>
             <div class="cell">
                 <label>Use Footer Text</label>
                 <div class="input_container">
